@@ -1,6 +1,10 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 
-export default class DataRow extends PureComponent {
+export default class DataRow extends Component {
+  shouldComponentUpdate(nextProps) {
+    return nextProps.grudge !== this.props.grudge;
+  }
+
   render() {
     const { grudge, onToggle } = this.props;
     return (
