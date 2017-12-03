@@ -17,7 +17,7 @@ export default class DataGrid extends Component {
         </thead>
         <tbody>
           {grudges.map((grudge, index) => (
-            <DataRow grudge={grudge} key={Math.random()} />
+            <DataRow grudge={grudge} key={grudge.id} />
           ))}
         </tbody>
       </table>
