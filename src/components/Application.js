@@ -6,6 +6,7 @@ import initialData from '../data.json';
 import DataGrid from './DataGrid';
 import SortingOptions from './SortingOptions';
 import Filter from './Filter'
+import NewGrudge from './NewGrudge';
 
 export default class Application extends Component {
   state = {
@@ -13,6 +14,13 @@ export default class Application extends Component {
     sortBy: '',
 
     filterText: '',
+  }
+
+  addGrudge = grudge => {
+    const { grudges } = this.state;
+    this.setState({
+      grudges: [grudge, ...grudges],
+    });
   }
 
   updateFilterText = (filterText) => {
@@ -35,6 +43,7 @@ export default class Application extends Component {
         <h1>Grudge List</h1>
         <SortingOptions sortBy={sortBy} onChange={this.updateSortOrder} />
         <Filter filterText={filterText} onChange={this.updateFilterText} />
+        <NewGrudge onSubmit={this.addGrudge} />
         <DataGrid grudges={grudges} />
       </div>
     );
