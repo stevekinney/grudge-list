@@ -21,7 +21,7 @@ const getForgivenessStatus = () => {
 
 for (let i = 0; i < 1000; i++) {
   const item = {
-    // id: uniqueId(),
+    id: uniqueId(),
     fullName: faker.name.findName(),
     transgression: sample(transgressions),
     dateAdded: faker.date.past(4),

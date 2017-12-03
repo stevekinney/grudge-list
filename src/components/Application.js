@@ -1,18 +1,28 @@
 import React, { Component } from 'react';
+import { orderBy } from 'lodash';
 
 import initialData from '../data.json';
 
+import SortingOptions from './SortingOptions';
+
 export default class Application extends Component {
   state = {
-    grudges: initialData
+    grudges: initialData,
+    sortBy: ''
+  }
+
+  updateSortOrder = (sortBy) => {
+    this.setState({ sortBy });
   }
 
   render() {
-    const { grudges } = this.state;
+    let { grudges, sortBy } = this.state;
+    grudges = orderBy(grudges, sortBy);
 
     return (
       <div className="Application">
         <h1>Grudge List</h1>
+        <SortingOptions sortBy={sortBy} onChange={this.updateSortOrder} />
         <table>
           <thead>
             <tr>
