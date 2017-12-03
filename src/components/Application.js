@@ -7,6 +7,7 @@ import DataGrid from './DataGrid';
 import SortingOptions from './SortingOptions';
 import Filter from './Filter'
 import NewGrudge from './NewGrudge';
+import Pagination from './Pagination';
 
 export default class Application extends Component {
   state = {
@@ -53,7 +54,12 @@ export default class Application extends Component {
         <SortingOptions sortBy={sortBy} onChange={this.updateSortOrder} />
         <Filter filterText={filterText} onChange={this.updateFilterText} />
         <NewGrudge onSubmit={this.addGrudge} />
-        <DataGrid grudges={grudges} onToggle={this.toggleGrudge} />
+        <Pagination
+          grudges={grudges}
+          render={(grudgesToDisplay) => {
+            return <DataGrid grudges={grudgesToDisplay} onToggle={this.toggleGrudge} />
+          }}
+        />
       </div>
     );
   }
