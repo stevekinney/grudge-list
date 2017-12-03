@@ -1,0 +1,27 @@
+{
+  "name": "grudge-list",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "express": "^4.16.2",
+    "faker": "^4.1.0",
+    "finalhandler": "^1.1.0",
+    "lodash": "^4.17.4",
+    "moment": "^2.19.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-scripts": "1.0.17",
+    "react-virtualized": "^9.13.0",
+    "redux": "^3.7.2",
+    "serve-static": "^1.13.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "data": "node ./bin/generate-data.js",
+    "production": "NODE_ENV=production yarn run build && node server.js"
+  }
+}

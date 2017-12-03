@@ -1,0 +1,109 @@
+html, * {
+  box-sizing: border-box;
+}
+
+body, input {
+  font: caption;
+}
+
+input, select {
+  padding: 0 0.5em;
+  border: 1px solid #2ea4f3;
+  background-color: #d8e7f1;
+  height: 30px;
+}
+
+select {
+  width: 100%;
+  border-radius: 0;
+}
+
+button, .button, input[type="submit"] {
+  background-color: #2ea4f3;
+  border: 1px solid #1b79b8;
+  border-radius: 0;
+  color: white;
+  padding: 0.5em;
+  transition: all 0.2s;
+}
+
+button:hover, .button:hover, input[type="submit"]:hover {
+  background-color: #59bdff;
+}
+
+button:active, .button:active, input[type="submit"]:active {
+  background-color: #0091f1;
+}
+
+button:disabled, .button:disabled, input[type="submit"]:disabled {
+  background-color: #eaf0f3;
+  border-color: #d0dbe2;
+}
+
+button.full-width, .button.full-width, input[type="submit"].full-width {
+  width: 100%;
+  margin: 1em 0;
+}
+
+table {
+  margin: 1em 0;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+td {
+  padding: 0.5em;
+}
+
+.Application {
+  margin: auto;
+  max-width: 800px;
+}
+
+.NewGrudge {
+  border: 1px solid #d0dbe2;
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5em 0;
+  padding: 0.5em;
+  width: 100%;
+}
+
+.NewGrudge input[type="text"] {
+  margin-right: 0.5em;
+  width: 100%;
+}
+
+.Filter {
+  border: 1px solid #d0dbe2;
+  padding: 0.5em;
+  margin: 0.5em 0;
+}
+
+.Filter input {
+  width: 100%;
+}
+
+.SortingOptions {
+  border: 1px solid #d0dbe2;
+  padding: 0.5em;
+  margin: 0.5em 0;
+}
+
+.SortingOptions input {
+  height: auto;
+}
+
+.SortingOptions label {
+  margin-right: 1em;
+}
+
+.Pagination--controls {
+  display: flex;
+}
+
+.Pagination--pageCount {
+  display: block;
+  margin-right: 1em;
+  flex: 5;
+}
