@@ -17,7 +17,7 @@ export default class DataGrid extends PureComponent {
         </thead>
         <tbody>
           {grudges.map((grudge, index) => (
-            <DataRow grudge={grudge} key={grudge.id} onToggle={onToggle} />
+            <DataRow grudge={grudge} key={grudge.id} onToggle={() => onToggle(grudge.id)} />
           ))}
         </tbody>
       </table>
