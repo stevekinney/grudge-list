@@ -23,6 +23,15 @@ export default class Application extends Component {
     });
   }
 
+  toggleGrudge = id => {
+    console.log('toggleGrudge', id);
+    const grudges = this.state.grudges.map(grudge => {
+      if (id !== grudge.id) return grudge;
+      return { ...grudge, forgiven: !grudge.forgiven };
+    });
+    this.setState({ grudges });
+  }
+
   updateFilterText = (filterText) => {
     this.setState({ filterText });
   }
@@ -44,7 +53,7 @@ export default class Application extends Component {
         <SortingOptions sortBy={sortBy} onChange={this.updateSortOrder} />
         <Filter filterText={filterText} onChange={this.updateFilterText} />
         <NewGrudge onSubmit={this.addGrudge} />
-        <DataGrid grudges={grudges} />
+        <DataGrid grudges={grudges} onToggle={this.toggleGrudge} />
       </div>
     );
   }

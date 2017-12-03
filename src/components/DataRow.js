@@ -1,6 +1,11 @@
 import React, { PureComponent } from 'react';
 
 export default class DataRow extends PureComponent {
+  handleToggle = () => {
+    const { grudge, onToggle } = this.props;
+    onToggle(grudge.id);
+  };
+
   render() {
     const { grudge } = this.props;
     return (
@@ -9,9 +14,11 @@ export default class DataRow extends PureComponent {
         <td>{grudge.transgression}</td>
         <td>{grudge.forgiven ? 'Yes' : 'No'}</td>
         <td>
-          <button>{grudge.forgiven ? 'Unforgive' : 'Forgive'}</button>
+          <button onClick={this.handleToggle}>
+            {grudge.forgiven ? 'Unforgive' : 'Forgive'}
+          </button>
         </td>
       </tr>
-    )
+    );
   }
 }

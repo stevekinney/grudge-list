@@ -3,7 +3,7 @@ import DataRow from './DataRow';
 
 export default class DataGrid extends PureComponent {
   render() {
-    const { grudges } = this.props;
+    const { grudges, onToggle } = this.props;
 
     return (
       <table>
@@ -17,7 +17,7 @@ export default class DataGrid extends PureComponent {
         </thead>
         <tbody>
           {grudges.map((grudge, index) => (
-            <DataRow grudge={grudge} key={grudge.id} />
+            <DataRow grudge={grudge} key={grudge.id} onToggle={onToggle} />
           ))}
         </tbody>
       </table>
