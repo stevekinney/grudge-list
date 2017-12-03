@@ -1,26 +1,24 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import DataRow from './DataRow';
 
-export default class DataGrid extends PureComponent {
-  render() {
-    const { grudges } = this.props;
+const DataGrid = ({ grudges }) => {
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Transgression</th>
+          <th>Forgiven?</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {grudges.map((grudge, index) => (
+          <DataRow grudge={grudge} key={index} />
+        ))}
+      </tbody>
+    </table>
+  );
+};
 
-    return (
-      <table>
-        <thead>
-          <tr>
-            <th>Full Name</th>
-            <th>Transgression</th>
-            <th>Forgiven?</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {grudges.map((grudge, index) => (
-            <DataRow grudge={grudge} key={index} />
-          ))}
-        </tbody>
-      </table>
-    );
-  }
-}
+export default DataGrid;

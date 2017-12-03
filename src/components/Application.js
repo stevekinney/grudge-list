@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { chain, orderBy, filter } from 'lodash';
+import { chain } from 'lodash';
 
 import initialData from '../data.json';
 
 import DataGrid from './DataGrid';
 import SortingOptions from './SortingOptions';
-import Filter from './Filter'
+import Filter from './Filter';
 
 export default class Application extends Component {
   state = {
@@ -13,15 +13,15 @@ export default class Application extends Component {
     sortBy: '',
 
     filterText: '',
-  }
+  };
 
-  updateFilterText = (filterText) => {
+  updateFilterText = filterText => {
     this.setState({ filterText });
-  }
+  };
 
-  updateSortOrder = (sortBy) => {
+  updateSortOrder = sortBy => {
     this.setState({ sortBy });
-  }
+  };
 
   render() {
     let { filterText, grudges, sortBy } = this.state;
