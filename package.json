@@ -13,6 +13,7 @@
     "react-redux": "^5.0.6",
     "react-scripts": "1.0.17",
     "react-virtualized": "^9.13.0",
+    "reactopt": "^1.5.4",
     "redux": "^3.7.2",
     "serve-static": "^1.13.1"
   },
@@ -22,6 +23,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "data": "node ./bin/generate-data.js",
-    "production": "NODE_ENV=production yarn run build && node server.js"
+    "production": "NODE_ENV=production yarn run build && node server.js",
+    "reactopt": "REACTOPT=true node node_modules/reactopt/main.js localhost:3000"
   }
 }
