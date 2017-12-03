@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
-import { orderBy } from 'lodash';
+import { chain, orderBy, filter } from 'lodash';
 
 import initialData from '../data.json';
 
 import SortingOptions from './SortingOptions';
+import Filter from './Filter'
 
 export default class Application extends Component {
   state = {
     grudges: initialData,
-    sortBy: ''
+    sortBy: '',
+
+    filterText: '',
+  }
+
+  updateFilterText = (filterText) => {
+    this.setState({ filterText });
   }
 
   updateSortOrder = (sortBy) => {
@@ -16,13 +23,14 @@ export default class Application extends Component {
   }
 
   render() {
-    let { grudges, sortBy } = this.state;
-    grudges = orderBy(grudges, sortBy);
+    let { filterText, grudges, sortBy } = this.state;
+    grudges = chain(grudges).orderBy(sortBy).value()
 
     return (
       <div className="Application">
         <h1>Grudge List</h1>
         <SortingOptions sortBy={sortBy} onChange={this.updateSortOrder} />
+        <Filter filterText={filterText} onChange={this.updateFilterText} />
         <table>
           <thead>
             <tr>
