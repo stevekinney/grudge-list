@@ -1,13 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-export default class DataRow extends Component {
-  shouldComponentUpdate(nextProps) {
-    return nextProps === this.props;
-  }
-
+export default class DataRow extends PureComponent {
   render() {
     const { grudge } = this.props;
-
     return (
       <tr>
         <td>{grudge.fullName}</td>

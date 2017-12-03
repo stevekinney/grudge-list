@@ -1,10 +1,6 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-export default class SortingOptions extends Component {
-  shouldComponentUpdate(nextProps) {
-    return nextProps = this.props;
-  }
-
+export default class SortingOptions extends PureComponent {
   handleChange = event => {
     const { value } = event.target;
     this.props.onChange(value);

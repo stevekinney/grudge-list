@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import DataRow from './DataRow';
 
-export default class DataGrid extends Component {
+export default class DataGrid extends PureComponent {
   render() {
     const { grudges } = this.props;
 
@@ -17,7 +17,7 @@ export default class DataGrid extends Component {
         </thead>
         <tbody>
           {grudges.map((grudge, index) => (
-            <DataRow grudge={grudge} key={grudge.id} />
+            <DataRow grudge={grudge} key={index} />
           ))}
         </tbody>
       </table>
