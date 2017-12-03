@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import DataRow from './DataRow';
 
 export default class DataGrid extends Component {
-  shouldComponentUpdate() {
-    return false;
-  }
-
   render() {
     const { grudges } = this.props;
 
@@ -21,7 +17,7 @@ export default class DataGrid extends Component {
         </thead>
         <tbody>
           {grudges.map((grudge, index) => (
-            <DataRow grudge={grudge} key={index} />
+            <DataRow grudge={grudge} key={Math.random()} />
           ))}
         </tbody>
       </table>

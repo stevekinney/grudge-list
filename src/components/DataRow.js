@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 export default class DataRow extends Component {
+  shouldComponentUpdate(nextProps) {
+    return nextProps === this.props;
+  }
+
   render() {
     const { grudge } = this.props;
 

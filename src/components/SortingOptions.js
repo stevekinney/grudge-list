@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 export default class SortingOptions extends Component {
+  shouldComponentUpdate(nextProps) {
+    return nextProps = this.props;
+  }
+
   handleChange = event => {
     const { value } = event.target;
     this.props.onChange(value);

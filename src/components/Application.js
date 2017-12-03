@@ -25,7 +25,10 @@ export default class Application extends Component {
 
   render() {
     let { filterText, grudges, sortBy } = this.state;
-    grudges = chain(grudges).orderBy(sortBy).value();
+    grudges = chain(grudges)
+      .filter(grudge => grudge.fullName.toLowerCase().includes(filterText))
+      .orderBy(sortBy)
+      .value();
 
     return (
       <div className="Application">
