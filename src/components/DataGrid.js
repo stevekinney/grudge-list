@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import DataRow from './DataRow';
 
 export default class DataGrid extends Component {
+  shouldComponentUpdate() {
+    return false;
+  }
+
   render() {
     const { grudges } = this.props;
 
