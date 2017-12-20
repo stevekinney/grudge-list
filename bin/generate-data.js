@@ -9,9 +9,18 @@ const data = [];
 const transgressions = [
   'Ordered lobster and then suggested we split the bill',
   'Parked too close to me',
-  'Did not brew another put of coffee',
+  'Did not brew another pot of coffee',
   'Forgot to wish me a happy birthday',
-  'Didn\'t watch my Frontend Masters course',
+  'Brought fancy cheese and then acted condescending',
+  'Changed the music to their own playlist as soon as I left the room',
+  'Volunteered to carve the turkey, but didn\'t actually know how',
+  'Generally obnoxious',
+  'Cut me in line',
+  'Ate the last slice of pizza',
+  'Brought "paper products" to the pot luck',
+  'Talked over me when I was telling a story',
+  'Looked at me funny',
+  'Spoiled Star Wars',
 ];
 
 const getForgivenessStatus = () => {
@@ -21,7 +30,7 @@ const getForgivenessStatus = () => {
 
 for (let i = 0; i < 1000; i++) {
   const item = {
-    // id: uniqueId(),
+    id: uniqueId(),
     fullName: faker.name.findName(),
     transgression: sample(transgressions),
     dateAdded: faker.date.past(4),
