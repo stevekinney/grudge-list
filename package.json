@@ -34,6 +34,6 @@
     "build": "NODE_ENV=production webpack --config ./config/webpack.config.production.js",
     "test": "echo LOL",
     "data": "node ./bin/generate-data.js",
-    "production": "NODE_ENV=production yarn run build && node server.js"
+    "production": "NODE_ENV=production rimraf build && yarn run build && node server.prod.js"
   }
 }

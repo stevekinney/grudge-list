@@ -31,8 +31,6 @@ app.get('/api/grudges.json', function(req, res) {
   const limit = parseInt(req.query.limit || 0, 10);
   const offset = parseInt(req.query.offset || 0, 10);
 
-  console.log({offset, limit});
-
   res.json(data.slice(offset, offset + limit));
 });
 

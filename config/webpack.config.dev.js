@@ -17,7 +17,8 @@ module.exports = {
       { test: /\.txt$/, use: 'raw-loader' },
       {
         test: /\.jsx?$/,
-        use: ['babel-loader']
+        use: ['babel-loader'],
+        exclude: /node_modules/
       },
       {
         test: /\.css$/,

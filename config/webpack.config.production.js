@@ -9,7 +9,7 @@ module.exports = {
     main: './src/index.js',
   },
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, '..', 'build'),
     filename: '[name].[hash].bundle.js'
   },
   module: {
@@ -17,7 +17,8 @@ module.exports = {
       { test: /\.txt$/, use: 'raw-loader' },
       {
         test: /\.jsx?$/,
-        use: ['babel-loader']
+        use: ['babel-loader'],
+        exclude: /node_modules/
       },
       {
         test: /\.css$/,
