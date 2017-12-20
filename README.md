@@ -1,8 +1,6 @@
 # Grudge List
 
-An example application for my React Performance workshop for [Frontend Masters][fem].
-
-[fem]: https://frontendmasters.com
+An example application for learning a little bit about optimizing performance in React.
 
 ## Installation
 
